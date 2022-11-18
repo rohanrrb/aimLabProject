@@ -13,7 +13,7 @@ import javax.swing.WindowConstants;
 
 /*
  * AIM TRAINER PROJECT - ROHAN BOPARDIKAR
- * HONORS CONTRACT, COMPLETED 11/12
+ * HONORS CONTRACT, LAST UPDATED 11/17
  */
 
 public class aimLab {
