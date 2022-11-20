@@ -1,4 +1,4 @@
-//package aimLab;
+
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -20,7 +20,7 @@ public class aimLab {
 	
 	static int score = 0;//score variable
 	static boolean isTarget = false; //is there a target variable
-	static int countdown = 26; //starting time
+	static int countdown = 26; //starting time + 1
 	static boolean isGame = true; //has game started
 
 	public static void main(String[] args) {
@@ -69,14 +69,14 @@ public class aimLab {
         		    @Override
         		    public void run() {
         		       countdown--;
-        		       timerLabel.setText("" + countdown);
+        		       timerLabel.setText("" + countdown);//updates time label
         		       
         		       if (countdown < 1) {
-        		    	   isGame = false;
+        		    	   isGame = false; //sets game state to false when timer finishes
         		       }
         		       
         		    }
-        		}, 0, 1000);
+        		}, 0, 1000); //timer increment in milliseconds (1000 -> 1 second)
                
                 
             }
@@ -136,13 +136,16 @@ public class aimLab {
                     spawnTarget(panel, score, scoreLabel, timerLabel);
         		}
                 else { //if time is up clear screen and display scoreLabel, but bigger
-                        
+                    
+                	//clear panel
                     panel.remove(button);
-        			//panel.remove(scoreLabel);
         			panel.remove(timerLabel);
+        			
+        			//re-initialize
                     panel.revalidate();
                     panel.repaint();
                     
+                    //show final score
             		scoreLabel.setBounds(300, 325, 200, 200);
             		scoreLabel.setFont(new Font("Serif", Font.PLAIN, 40));
                 } 
@@ -156,10 +159,8 @@ public class aimLab {
 	 * @param scoreLabel
 	 */
 	public static void addScore(JLabel scoreLabel) {
-		
-		score++;
-		System.out.println(score);
-		scoreLabel.setText("Score: " + score);
+		score++;//increments score
+		scoreLabel.setText("Score: " + score); //Updates score label
 		
 
 	}
