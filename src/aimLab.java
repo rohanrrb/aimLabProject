@@ -14,6 +14,7 @@ import javax.swing.WindowConstants;
 /*
  * AIM TRAINER PROJECT - ROHAN BOPARDIKAR
  * HONORS CONTRACT, LAST UPDATED 11/29
+ * Aim Trainer with randomly spawning targets and a timer with a score. 
  */
 
 public class aimLab {
